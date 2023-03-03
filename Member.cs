@@ -13,9 +13,5 @@ namespace plan_a_heist
             SkillLevel = skillLevel;
             CourageFactor = courageFactor;
         }
-        
-
-
-
     }
 }

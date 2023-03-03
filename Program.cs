@@ -7,9 +7,9 @@ namespace plan_a_heist
     {
         static void Main(string[] args)
         {
+            int LuckValue = new Random().Next(-10,11);
 
-            int bankDifficultyLevel = 100;
-
+            int bankDifficultyLevel = LuckValue + 100;
             
             List<Member> Team = new List<Member>();
             Console.WriteLine("Plan Your Heist!");
@@ -45,7 +45,9 @@ namespace plan_a_heist
             {
                 teamSkillLevel += member.SkillLevel;
             }  
+            Console.WriteLine($"total skill level of team :{teamSkillLevel} and bank's difficulty level is {bankDifficultyLevel}");
 
+            for(int i = 0; i < 5; i++)
             if(teamSkillLevel >= bankDifficultyLevel)
             {
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
@@ -58,16 +60,6 @@ namespace plan_a_heist
                 Console.WriteLine($"straight to jail");
                 Console.ResetColor();
             }
-
-            Console.WriteLine($"there are {Team.Count} members");
-
-                // foreach (Member member in Team)
-                // {
-                // Console.WriteLine($"{member.Name} has a skill level of {member.SkillLevel} and a courage factor of {member.CourageFactor}.");
-                // }
-
-
-
         }
     }
 }
